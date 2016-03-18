@@ -1,20 +1,14 @@
 import logging
 import bcrypt
 import concurrent.futures
-# import MySQLdb
-import markdown
 import os.path
-import re
-import subprocess
-# import torndb
+
 import tornado.escape
 from tornado import gen
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
-import unicodedata
-
 from tornado.options import define, options
 
 logger = logging.getLogger("app")
