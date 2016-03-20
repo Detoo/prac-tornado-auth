@@ -1,1 +1,1 @@
-Implementation practice for tornado-based API user authentication.
+Implementation practice for tornado-based API user authentication. This is based on [demos/blog/](https://github.com/tornadoweb/tornado/tree/master/demos/blog) of tornado's repo.
