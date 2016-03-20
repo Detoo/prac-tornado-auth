@@ -48,17 +48,13 @@ class Application(tornado.web.Application):
 class BaseHandler(tornado.web.RequestHandler):
     def get_current_user(self):
         user_id = self.get_secure_cookie("user")
-        if user_id is None:
-            return None
-        else:
-            # TODO: get user metadata from database
-            return USER
+        return user_id
 
 
 class HomeHandler(BaseHandler):
     @tornado.web.authenticated
     def get(self):
-        logger.info('current user: {}'.format(self.current_user))
+        logger.info('current user ID: {}'.format(self.current_user))
         self.render("home.html")
 
 
