@@ -79,7 +79,7 @@ class HomeHandler(BaseHandler):
 
 class AuthLoginHandler(BaseHandler):
     def get(self):
-        self.render('login.html', error=None)
+        self.render('login.html', error=None, next=self.get_argument('next', '/'))
 
     @gen.coroutine
     def post(self):
@@ -95,7 +95,9 @@ class AuthLoginHandler(BaseHandler):
 
         if hashed_password == user.hashed_password:
             self.set_secure_cookie('user', str(user.id))
-            self.redirect(self.get_argument('next', '/'))
+            next_url = self.get_argument('next', '/')
+            logger.info('next URL: {}'.format(next_url))
+            self.redirect(next_url)
         else:
             self.render('login.html', error='incorrect password')
 

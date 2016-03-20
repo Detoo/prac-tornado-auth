@@ -8,6 +8,7 @@
 <form action="/auth/login" method="POST">
   Email: <input name="email" type="text"><br>
   Password: <input name="password" type="password"><br>
+  <input name="next" type="hidden" value="{{ next }}"><br>
   {% module xsrf_form_html() %}
   <input type="submit">
 </form>
