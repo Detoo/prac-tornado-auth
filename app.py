@@ -25,7 +25,7 @@ executor = concurrent.futures.ThreadPoolExecutor(2)
 class User(object):
     id = 1234
     name = 'User Name'
-    hashed_password = '$2b$12$ghbwXijyYEm1lq2j2IKydeDjyjJdajTRnhizQYMTs2zvSgfJS/NqC'
+    hashed_password = '$2b$12$ghbwXijyYEm1lq2j2IKydeDjyjJdajTRnhizQYMTs2zvSgfJS/NqC'  # = pass
 
 USER = User()
 
